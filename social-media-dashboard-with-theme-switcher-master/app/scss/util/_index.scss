@@ -1,0 +1,5 @@
+// to import the breakpoint scss file into the index.scss file, you would use the following code:
+@forward 'breakpoints';
+@forward 'function';
+@forward 'colors';
+@forward 'fonts'; 

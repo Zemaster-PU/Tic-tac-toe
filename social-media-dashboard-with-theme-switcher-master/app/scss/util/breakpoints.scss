@@ -1,0 +1,39 @@
+// Description: Breakpoints for media queries
+$breakpoints-up: (
+    'medium': '40em',
+    'large': '64em',
+    'xlarge': '90em',
+);
+
+// parameters for the down mixin
+$breakpoints-down: (
+    'small': '39.9375em',
+    'medium': '63.9375em',
+    'large': '89.9375em',
+);
+
+// will be used to load without typing the whole map-get
+@mixin breakpoint($size) {
+    @media (min-width: map-get($breakpoints-up, $size)) {
+        @content;
+    }
+}
+
+@mixin breakpoint-down($size) {
+    @media (max-width: map-get($breakpoints-down, $size)) {
+        @content;
+    }
+}
+
+// Usage examples
+// h1 {
+//     @include breakpoint(large){
+//         font-size: 3rem;
+//     }
+// }
+
+// @media (max-width:87.5em ) {
+//     h1 {
+//         font-size: 2rem;
+//     }
+// }
